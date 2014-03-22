@@ -1,7 +1,8 @@
-/*var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var Grid = require('gridfs-stream');
-var gfs = Grid(db, mongo);
-*/
+var fs = require("fs");
+var configDB = require('../config/database.js');
+
 
 module.exports = function(app, passport) {
     var mainIndex  = "/main";
@@ -24,11 +25,35 @@ module.exports = function(app, passport) {
             user : req.user
         });
     });
+    app.get("/upload", isLoggedIn, function(req, res) {
+        res.redirect("/main");
+    });
+    app.post("/upload", isLoggedIn, function(req, res) {
+        var conn = mongoose.createConnection(configDB.url);
+        conn.once('open', function () {
+            var gfs = Grid(conn.db, mongoose.mongo);
+            var file = req.files.file;
+            var writestream = gfs.createWriteStream({filename: file.name, user: req.user.local.id});
+            fs.createReadStream(file.path).pipe(writestream);
 
-    app.post("/upload", isLoggedIn, function(req, res){
-        var writestream = gfs.createWriteStream([options]);
-        fs.createReadStream('/some/path').pipe(writestream);
-        res.end("ok: " + req.files.file.originalFilename);
+            writestream.on('close', function (file) {
+                console.log(file);
+                req.user.local.imageId = file._id;
+                req.user.save();
+
+                res.end('<html><head><meta http-equiv="refresh" content="2;url=/main#docs"></head>'+"<body>"+"ok: " + file._id+"</body></html>");
+            });
+        });
+    });
+
+    app.get("/download", isLoggedIn, function(req, res) {
+        var conn = mongoose.createConnection(configDB.url);
+        conn.once('open', function () {
+            var gfs = Grid(conn.db, mongoose.mongo);
+
+            var fs = gfs.createReadStream({_id: req.user.local.imageId});
+            fs.pipe(res);
+        });
     });
 
 	// LOGOUT ==============================
