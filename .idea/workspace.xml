@@ -64,7 +64,7 @@
       <file leaf-file-name="user.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="30" selection-start="441" selection-end="441" vertical-scroll-proportion="0.30322582" vertical-offset="5" max-vertical-offset="780">
+            <state line="20" column="30" selection-start="534" selection-end="534" vertical-scroll-proportion="0.37593985" vertical-offset="0" max-vertical-offset="798">
               <folding />
             </state>
           </provider>
@@ -99,24 +99,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connect-local.ejs" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/connect-local.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="20" selection-start="47" selection-end="47" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="780">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -138,6 +120,8 @@
         <option value="$PROJECT_DIR$/public/app/viewmodels/docs.js" />
         <option value="$PROJECT_DIR$/public/app/views/docs.html" />
         <option value="$PROJECT_DIR$/app/routes.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -189,20 +173,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="registrar2nc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="registrar2nc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="registrar2nc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -419,20 +389,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="798">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="25" selection-start="191" selection-end="191" vertical-scroll-proportion="0.2689243" vertical-offset="0" max-vertical-offset="502">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/main.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="34" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.5092025" vertical-offset="456" max-vertical-offset="945">
@@ -528,9 +484,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="6" selection-start="279" selection-end="279" vertical-scroll-proportion="0.30967742" vertical-offset="0" max-vertical-offset="775">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="9" selection-start="19" selection-end="19" vertical-scroll-proportion="0.018796992" vertical-offset="0" max-vertical-offset="798">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="30" selection-start="441" selection-end="441" vertical-scroll-proportion="0.30322582" vertical-offset="5" max-vertical-offset="780">
+        <state line="20" column="30" selection-start="534" selection-end="534" vertical-scroll-proportion="0.37593985" vertical-offset="0" max-vertical-offset="798">
           <folding />
         </state>
       </provider>
