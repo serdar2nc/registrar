@@ -1,0 +1,14 @@
+﻿<section>
+    <h2>Upload</h2>
+
+    <form id="uploadForm"
+          enctype="multipart/form-data"
+          action="/upload"
+          method="post">
+        <input type="file" name="file" data-bind="event: { change: function() { selectFile($element) } }"/>
+        <input type="submit">
+    </form>
+
+    <span data-bind="text: status"></span></br>
+    <img class="img-rounded" style="width: 180px" data-bind="attr: { src: imagePath }" />
+</section>
