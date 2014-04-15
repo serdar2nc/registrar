@@ -1,0 +1,8 @@
+﻿<section>
+    <h2>Belge Talepleri</h2>
+    <ul data-bind="foreach: data">
+        <li><span data-bind="text: state"/> [@<span data-bind="text: assignedTo"/>]
+             @<span data-bind="text: when"/>
+            <br/><span data-bind="text: category"/>: <span data-bind="text: comment"/></li>
+    </ul>
+</section>

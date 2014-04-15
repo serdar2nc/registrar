@@ -1,0 +1,16 @@
+﻿<section>
+    <h2>Belge Talebi</h2>
+    <div class="row-fluid">
+        Kategori: <select data-bind="options: availableCategories,
+                       value: selectedCategory,
+                       optionsCaption: 'Choose...'"></select>
+        <br/>
+        Aciklama: <textarea rows="5"  data-bind="value: desc" placeholder="Aciklamanizi yaziniz..."></textarea>
+        <br/>
+        <button class="btn-primary" data-bind="click: save">Gonder</button>
+        <br/>
+        <div data-bind="visible: response" class="row-fluid">
+            Isleminiz kayit edildi: #<span data-bind="text: response()._id"></span>
+        </div>
+    </div>
+</section>

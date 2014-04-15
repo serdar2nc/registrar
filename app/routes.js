@@ -2,11 +2,29 @@ var mongoose = require('mongoose');
 var Grid = require('gridfs-stream');
 var fs = require("fs");
 var configDB = require('../config/database.js');
-
+var wfs = require("./models/workflow.js");
 
 module.exports = function(app, passport) {
     var mainIndex  = "/main";
 // normal routes ===============================================================
+    app.post('/wf', isLoggedIn, function(req, res){
+        req.body.when = new Date();
+        req.body.sender = req.user.local.email;
+        console.log('saving', req.body);
+        new wfs(req.body).save(function(err, data){
+            if(err)
+                return res.send(err);
+            console.log('saved', data);
+            res.send(data);
+
+        });
+    });
+
+    app.get('/wf', isLoggedIn, function(req, res){
+        wfs.find({sender : req.user.local.email }, function(err, data){
+            res.send(data);
+        });
+    });
 
 	// show the home page (will also have our login links)
 	app.get('/', function(req, res) {
@@ -50,9 +68,15 @@ module.exports = function(app, passport) {
         var conn = mongoose.createConnection(configDB.url);
         conn.once('open', function () {
             var gfs = Grid(conn.db, mongoose.mongo);
-
-            var fs = gfs.createReadStream({_id: req.user.local.imageId});
-            fs.pipe(res);
+            try {
+                if(!req.user.local.imageId)
+                    return res.status(404).send('Not found');
+                var fs = gfs.createReadStream({_id: req.user.local.imageId});
+                fs.pipe(res);
+            }catch(ex){
+                console.log(ex);
+                res.status(404).send('Not found');
+            }
         });
     });
 
