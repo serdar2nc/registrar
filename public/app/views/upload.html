@@ -5,10 +5,14 @@
           enctype="multipart/form-data"
           action="/upload"
           method="post">
-        <input type="file" name="file" data-bind="event: { change: function() { selectFile($element) } }"/>
-        <input type="submit">
+
+        <input type="file" name="file" data-bind="event: { change: function() { selectFile($element) } }"/><br/>
+        <input name="comment" class="input-small" data-bind="value: comment" placeholder="comment"/><br/>
+        <input type="submit"><span class="icon icon-cloud-upload"/></input>
     </form>
 
+
     <span data-bind="text: status"></span></br>
+
     <img class="img-rounded" style="width: 180px" data-bind="attr: { src: imagePath }" />
 </section>

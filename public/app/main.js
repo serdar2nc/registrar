@@ -6,7 +6,11 @@
         'transitions' : '../lib/durandal/js/transitions',
         'knockout': '../lib/knockout/knockout-2.3.0',
         'bootstrap': '../lib/bootstrap/js/bootstrap',
-        'jquery': '../lib/jquery/jquery-1.9.1'
+        'jquery': '../lib/jquery/jquery-1.9.1',
+        'infra-core': '../lib/infra/infragistics.core',
+        'infra-lob': '../lib/infra/infragistics.lob',
+        'infra-ext-ds': '../lib/infra/extensions/infragistics.datasource.knockoutjs',
+        'infra-ext-grid': '../lib/infra/extensions/infragistics.ui.grid.knockout-extensions'
     },
     shim: {
         'bootstrap': {
@@ -21,7 +25,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'],  function (s
     system.debug(true);
     //>>excludeEnd("build");
 
-    app.title = 'Registrar';
+    app.title = 'Student';
 
     app.configurePlugins({
         router:true,

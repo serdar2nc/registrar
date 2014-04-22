@@ -1,0 +1,12 @@
+<section>
+	<div class="row">
+		<div class="span2"></div>
+		<div class="span1" style="padding:10px;">
+			<input type="button" data-bind="click: buttonClick, value: buttonText"/>
+		</div>
+		<div class="span4" style="padding:10px;">
+			<span data-bind="text: labelText"/>
+		</div>
+	</div>
+	<table id="grid1" data-bind="igGrid: {dataSource: data, caption: 'Food from Heaven', primaryKey: 'id',height: 300, width: 800, features: [{name: 'Sorting'}, {name: 'Updating'}]}"></table>
+</section>

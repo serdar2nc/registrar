@@ -1,8 +1,17 @@
 ﻿<section>
     <h2>Belge Talepleri</h2>
-    <ul data-bind="foreach: data">
-        <li><span data-bind="text: state"/> [@<span data-bind="text: assignedTo"/>]
-             @<span data-bind="text: when"/>
-            <br/><span data-bind="text: category"/>: <span data-bind="text: comment"/></li>
-    </ul>
+    <table class="table table-striped table-bordered table-condensed">
+        <thead>
+            <th>#</th><th>Category</th><th>State</th><th>Assigned To</th><th>Date</th>
+        </thead>
+        <tbody data-bind="foreach: data">
+            <tr>
+                <td><a href="#" data-bind="click: $root.navigate.bind(this)"><span data-bind="text: _id"/></a></td>
+                <td data-bind="text: category"/>
+                <td data-bind="text: state"/>
+                <td data-bind="text: assignedTo"/>
+                <td data-bind="text: when"/>
+            </tr>
+        </tbody>
+    </table>
 </section>

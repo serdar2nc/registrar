@@ -20,8 +20,24 @@ module.exports = function(app, passport) {
         });
     });
 
+    app.put('/wf/:id', isLoggedIn, function(req, res){
+        console.log('saving', req.body);
+        delete req._id;
+
+        wfs.findByIdAndUpdate(req.params.id,req.body, {}, function(err, data){
+            if(err)
+                return res.send(err);
+            console.log('saved', data);
+            res.send(data);
+
+        });
+    });
+
     app.get('/wf', isLoggedIn, function(req, res){
-        wfs.find({sender : req.user.local.email }, function(err, data){
+        var crit = {sender : req.user.local.email };
+        if(req.user.local.email === 'admin')
+            crit = {state: 'pending', assignedTo: 'registrar'};
+        wfs.find(crit, function(err, data){
             res.send(data);
         });
     });
@@ -50,6 +66,7 @@ module.exports = function(app, passport) {
         var conn = mongoose.createConnection(configDB.url);
         conn.once('open', function () {
             var gfs = Grid(conn.db, mongoose.mongo);
+            //console.log(req.body);
             var file = req.files.file;
             var writestream = gfs.createWriteStream({filename: file.name, user: req.user.local.id});
             fs.createReadStream(file.path).pipe(writestream);
